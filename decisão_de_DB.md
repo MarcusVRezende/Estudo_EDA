@@ -58,7 +58,7 @@ A escalabilidade horizontal de bancos de dados NoSQL é a mais adequada para o n
 A escolha de um banco de dados NoSQL atende a todos os requisitos do projeto e fornece uma base sólida para o desenvolvimento da nossa aplicação.
 # Decisão de Tecnologia: Por que usar MongoDB?
 
-![Texto alternativo para a imagem]<img width="438" height="115" alt="image" src="https://github.com/user-attachments/assets/547ab99a-ae9c-4629-bd96-e0d46096baf0" />
+<img width="438" height="115" alt="image" src="https://github.com/user-attachments/assets/547ab99a-ae9c-4629-bd96-e0d46096baf0" />
 
 
 ### 1. Flexibilidade de Esquema (Schema-less)
@@ -88,5 +88,6 @@ O MongoDB é um dos bancos de dados mais populares do mercado, com uma documenta
 ### Conclusão
 
 A escolha do MongoDB se justifica por sua **flexibilidade**, **facilidade de uso** e **poder de processamento de dados em escala**. Ele é a ferramenta ideal para garantir que o projeto seja entregue com sucesso, atendendo a todos os requisitos do projeto.
+
 
 
