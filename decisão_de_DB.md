@@ -56,3 +56,34 @@ A escalabilidade horizontal de bancos de dados NoSQL é a mais adequada para o n
 * **Escalabilidade e Custo:** A arquitetura do MongoDB nos permite lidar com o crescimento futuro do volume de dados de forma mais econômica e simples.
 
 A escolha de um banco de dados NoSQL atende a todos os requisitos do projeto e fornece uma base sólida para o desenvolvimento da nossa aplicação.
+# Decisão de Tecnologia: Por que usar MongoDB?
+
+Esta documentação explica a escolha do MongoDB como o banco de dados principal para o projeto de minerador de notícias, baseando-se em sua adequação aos requisitos do projeto e na facilidade de uso para a equipe.
+
+### 1. Flexibilidade de Esquema (Schema-less)
+
+O MongoDB é um banco de dados NoSQL, o que significa que ele não exige que os dados tenham uma estrutura rígida. Cada documento (que é como um JSON) pode ter campos diferentes.
+
+* **Vantagem:** Em um projeto de mineração de notícias, o formato dos dados pode variar muito entre as fontes. A flexibilidade do MongoDB permite que a equipe armazene notícias de diferentes jornais sem precisar de um esquema fixo, o que acelera o desenvolvimento.
+
+### 2. Formato de Dados Intuitivo (JSON)
+
+O MongoDB armazena os dados no formato **BSON** (uma versão binária do JSON). Isso o torna muito fácil de usar para desenvolvedores web, que já trabalham com JSON no dia a dia.
+
+* **Vantagem:** A equipe de front-end, que lida com dados em JSON, terá uma curva de aprendizado mais suave e poderá integrar a aplicação com o banco de dados de forma mais rápida e natural.
+
+### 3. Escalabilidade e Desempenho
+
+O MongoDB é projetado para lidar com grandes volumes de dados de forma eficiente. Ele se expande facilmente (escalabilidade horizontal) e é otimizado para buscas complexas, como as buscas por palavras-chave que o nosso projeto exige.
+
+* **Vantagem:** A arquitetura do banco de dados suporta o crescimento do projeto de mineração sem comprometer a performance, o que é crucial para a nossa aplicação.
+
+### 4. Suporte e Comunidade
+
+O MongoDB é um dos bancos de dados mais populares do mercado, com uma documentação excelente, tutoriais e uma comunidade ativa.
+
+* **Vantagem:** A equipe terá acesso a um vasto material de apoio e poderá resolver dúvidas rapidamente, o que é ideal para um projeto com prazo de entrega definido.
+
+### Conclusão
+
+A escolha do MongoDB se justifica por sua **flexibilidade**, **facilidade de uso** e **poder de processamento de dados em escala**. Ele é a ferramenta ideal para garantir que o projeto seja entregue com sucesso, atendendo a todos os requisitos do projeto.
