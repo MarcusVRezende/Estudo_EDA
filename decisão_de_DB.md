@@ -1,6 +1,6 @@
-# Levantamento e Justificativa da Escolha de Banco de Dados
+# Levantamento e Justificativa da Escolha de Banco de Dados 📊
 
-### **Tarefas Cumpridas:**
+### **Tarefas Cumpridas:** ✅
 
 * Identificação dos principais estilos de banco de dados.
 * Análise dos trade-offs de cada abordagem.
@@ -9,7 +9,7 @@
 
 ---
 
-### **1. Estilos de Banco de Dados**
+### **1. Estilos de Banco de Dados** 📚
 
 Para o nosso projeto, os estilos de banco de dados mais relevantes são:
 
@@ -21,7 +21,7 @@ Para o nosso projeto, os estilos de banco de dados mais relevantes são:
 
 ---
 
-### **2. Análise e Trade-offs: SQL vs. NoSQL (Documento)**
+### **2. Análise e Trade-offs: SQL vs. NoSQL (Documento)** ⚖️
 
 | Característica | Banco de Dados Relacional (SQL) | Banco de Dados Não-Relacional (NoSQL) |
 | :--- | :--- | :--- |
@@ -32,7 +32,7 @@ Para o nosso projeto, os estilos de banco de dados mais relevantes são:
 
 ---
 
-### **3. Escalabilidade, Custo e Complexidade**
+### **3. Escalabilidade, Custo e Complexidade** 📈
 
 | Característica | Escala Vertical (Relacional) | Escala Horizontal (NoSQL) |
 | :--- | :--- | :--- |
@@ -43,7 +43,7 @@ A escalabilidade horizontal de bancos de dados NoSQL é a mais adequada para o n
 
 ---
 
-### **4. Conclusão: Escolha e Justificativa**
+### **4. Conclusão: Escolha e Justificativa** ✅
 
 **O estilo de banco de dados mais adequado para o nosso projeto é o:**
 
