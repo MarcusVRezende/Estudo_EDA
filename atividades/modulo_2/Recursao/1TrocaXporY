@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void trocaXporY(char *str){
+
+    if (str == 'x'){
+        str = 'y';
+    }
+
+    printf("%s", str);
+
+}
+
+int main(){
+
+    char palavra[81];
+
+    scanf("%s", palavra);
+
+    trocaXporY(palavra);
+    return 0;
+}
