@@ -1,2 +1,3 @@
-# Atividades_C
+# Atividades da materia: Estrutura de Dados
+
 minhas atividade para relembrar C
