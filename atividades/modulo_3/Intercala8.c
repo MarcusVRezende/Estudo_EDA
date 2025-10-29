@@ -1,8 +1,4 @@
-// complexidae: O(nlogn)
-
 #include <stdio.h>
-#include <stdlib.h>
-
 void intercala(int *v, int e, int m, int d)
 {
     int i = e, j = m + 1, k = 0;
@@ -35,36 +31,30 @@ void intercala(int *v, int e, int m, int d)
     free(aux);
 }
 
-void mergeSort(int *vetor, int inicio, int fim){
-    if( inicio >= fim ){
+void mergeSort(int *vetor, int inicio, int fim)
+{
+    if (inicio >= fim)
+    {
         return;
     }
-    int meio =(fim - inicio + fim) / 2;
+    int meio = (fim - inicio + fim) / 2;
 
     mergeSort(vetor, inicio, meio);
     mergeSort(vetor, meio + 1, fim);
     intercala(vetor, inicio, meio, fim);
-
 }
 
 int main(){
 
-    int vetor[] = {2, -1, -8, -3, 5, 10, 6, 0, 2, 3, 6, 3};
+    int n;
 
-    int tamanho = 12;
+    int vetor[n];
 
-    printf("Lista Original: ");
-    for (int i = 0; i < tamanho; i++)
-    {
-        printf("%d, ", vetor[i]);
-    }
-    mergeSort(vetor, 0, 11);
+    scanf("%d", &n)
 
-    printf("\nLista Ordenada: ");
-    for (int i = 0; i < tamanho; i++)
-    {
-        printf("%d, ", vetor[i]);
-    }
+
+
+
 
     return 0;
 }
