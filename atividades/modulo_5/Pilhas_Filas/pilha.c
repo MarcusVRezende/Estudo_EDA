@@ -20,7 +20,7 @@ pilha *cria_pilha(int n){
     p -> dado = malloc(n * sizeof(int));          // criando o "conteudo" da caixinha
 
     p -> topo = 0;                                // inicializando o topo (colocando o primeiro livro 0)
-    p -> n = n;                                    // tamanho da caixa ( quantos livros cabem)
+    p -> n = n;                                   // tamanho da caixa ( quantos livros cabem)
 
     return p;
 }
@@ -61,58 +61,20 @@ void destroi_pilha (pilha *p){
     free (p);
 }
 
-int pares(char abertura, char fechamento){
-    if (abertura == '(' && fechamento == ')') return 1; 
-    if (abertura == '[' && fechamento == ']') return 1;
-    if (abertura == '{' && fechamento == '}') return 1;
-
-    return 0;
-}
-int verifica_expressao(char *expressao){
-
-    pilha *p = cria_pilha(10);
-    int temp;
-
-    for(int i = 0; expressao[i] != '\0'; i++){
-       
-        char c = expressao[i];
-
-        if (c == '(' || c == '[' || c == '{'){
-            empilha(p, c);
-        }
-        else if (c == ')' || c == ']' || c == '}'){
-
-            if (desempilha(p, &temp) == 1){
-                destroi_pilha(p);
-                return 0;
-            }
-            char topo = temp;
-            if(!pares(topo, c)){
-                destroi_pilha(p);
-                return 0;
-            }
-        }
-    }
-    if(pilha_vazia(p)){
-        destroi_pilha(p);
-        return 1; 
-    }else{
-        destroi_pilha(p);
-        return 0;
-    }
-
-}
-
 int main(){
 
-    char expressao[501];
+    pilha *p = cria_pilha(5);
 
-    scanf("%s", expressao);
+    empilha(p, 3);
+    empilha(p, 7);
+    empilha(p, 9);
+    empilha(p, 1);
 
-    if(verifica_expressao(expressao)){
-        printf("sim\n");
-    }else{
-        printf("nao\n");
+    int resultado;
+
+    while (!pilha_vazia(p)){
+        desempilha(p, &resultado);
+        printf("%d ", resultado);
     }
     return 0;
 }

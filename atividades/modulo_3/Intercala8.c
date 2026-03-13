@@ -1,60 +1,40 @@
 #include <stdio.h>
-void intercala(int *v, int e, int m, int d)
-{
-    int i = e, j = m + 1, k = 0;
+#include <stdlib.h>
 
-    int *aux = malloc((d - e + 1) * sizeof(int));
-    while (i <= m && j <= d)
-    {
-        if (v[i] < v[j])
-        {
-            aux[k++] = v[i++];
-        }
-        else
-        {
-            aux[k++] = v[j++];
-        }
-    }
-    while (i <= m)
-    {
-        aux[k++] = v[i++];
-    }
-    while (j <= d)
-    {
-        aux[k++] = v[j++];
-    }
-    for (i = e, k = 0; i <= d; i++, k++)
-    {
-        v[i] = aux[k];
-    }
-
-    free(aux);
+int compara(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
 }
 
-void mergeSort(int *vetor, int inicio, int fim)
-{
-    if (inicio >= fim)
-    {
-        return;
+int main() {
+    int total = 0;
+    int *todos = NULL;
+
+    for (int i = 0; i < 8; i++) {
+        int s;
+        scanf("%d", &s);
+
+        if (s == 0) continue; 
+
+        int *v = malloc(s * sizeof(int));
+        for (int j = 0; j < s; j++)
+            scanf("%d", &v[j]);
+
+            todos = realloc(todos, (total + s) * sizeof(int));
+        for (int j = 0; j < s; j++)
+            todos[total + j] = v[j];
+
+        total += s;
+        free(v);
     }
-    int meio = (fim - inicio + fim) / 2;
 
-    mergeSort(vetor, inicio, meio);
-    mergeSort(vetor, meio + 1, fim);
-    intercala(vetor, inicio, meio, fim);
-}
+    qsort(todos, total, sizeof(int), compara);
 
-int main(){
+    for (int i = 0; i < total; i++) {
+        printf("%d", todos[i]);
+        if (i < total - 1) printf(" ");
+    }
+    printf("\n");
 
-    int n;
-
-    int vetor[n];
-
-    scanf("%d", &n)
-
-
-
-
-
+    free(todos);
     return 0;
 }

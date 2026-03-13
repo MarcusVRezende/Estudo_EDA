@@ -12,8 +12,8 @@ void troca(int *i, int *j){
 
 int particiona(int *vet, int esquerda, int direita){
 
-    int j = esquerda, p = vet[direita];
-    for(int k = esquerda; k < direita; k++){
+    int j = esquerda + 1, p = vet[direita - 1];
+    for(int k = esquerda; k < direita - 1; k++){
 
         if(vet[k] < p){
             troca(&vet[k], &vet[j]);
