@@ -3,7 +3,7 @@
 Repositório destinado ao armazenamento e organização de atividades, exercícios e implementações das disciplinas de Estrutura de Dados 1 e 2 da UnB.
 ---
 
-## 📂 Organização do Repositório
+## Organização do Repositório
 
 ### **Estrutura de Dados (EDA)**
   * Atividades para relembrar C
@@ -25,7 +25,19 @@ Repositório destinado ao armazenamento e organização de atividades, exercíci
   * Arvores
 
 ---
-## 🛠️ Tecnologias e Ferramentas
+## Tecnologias e Ferramentas
 * **Linguagem:** C
 * **Compilador:** GCC
+
+## Comando para rodar um arquivo .c
+Compilar o arquivo
+  ```bash
+  gcc -g nome_do_arquivo.c -o programa
+  ```
+Rodar o executável
+  ```bash
+  ./programa
+  ```
+**Para ajudar o depurador a dizer exatamente onde o erro aconteceu, compile sempre com a flag -g**
+
 
