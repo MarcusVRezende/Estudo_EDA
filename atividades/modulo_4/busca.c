@@ -26,7 +26,7 @@ celula *busca_rec (celula *le, int x){
         return NULL;
     }
 
-    if(le -> dado == x){
+    if(le -> dado ==  x){
         return le;
     }
     return busca_rec(le, x);
