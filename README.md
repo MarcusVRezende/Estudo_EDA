@@ -39,5 +39,3 @@ Rodar o executável
   ./programa
   ```
 **Para ajudar o depurador a dizer exatamente onde o erro aconteceu, compile sempre com a flag -g**
-
-
