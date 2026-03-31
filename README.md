@@ -22,7 +22,8 @@ Repositório destinado ao armazenamento e organização de atividades, exercíci
 
 ---
 ### **Estrutura de Dados 2 (EDA2)**
-  * Arvores
+  * Arvores:
+   * Arvore Binaria
 
 ---
 ## Tecnologias e Ferramentas
