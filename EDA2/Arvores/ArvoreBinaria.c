@@ -1,136 +1,93 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct no
-{
-    int conteudo;
-    struct no *esquerda, *direita;
-} No;
+typedef struct celula{
+    int dado;
+    struct celula *esq, *dir;
+}celula;
 
-typedef struct
-{
-    No *raiz;
-} arvore_binaria;
+typedef struct arvoreBinaria{
+    celula *raiz;
+}arvoreBinaria;
 
-void inserirEsquerda(No *no, int valor);
-void inserirDireita(No *no, int valor);
-void inserir(arvore_binaria *arv, int valor);
-void imprimirArvore(No *raiz);
+celula* inserir(celula *raiz, int valor);
+void imprimirArvore(celula *raiz);
+void limparArvore(celula *raiz);
 
-void inserirEsquerda(No *no, int valor)
-{
-    if (no->esquerda == NULL)
-    {
+celula *inserir(celula *raiz, int valor){
+    if(raiz == NULL){
+        celula *novo = (celula*)malloc(sizeof(celula));
+    
+        if(novo == NULL){
+            return NULL;
+        }
 
-        No *novo = (No *)malloc(sizeof(No));
-        novo->conteudo = valor;
-        novo->esquerda = NULL;
-        novo->direita = NULL;
+        novo->dado = valor;
+        novo->esq = NULL;
+        novo->dir = NULL;
 
-        no->esquerda = novo;
+        return novo;
     }
-    else
-    {
-        if (no->esquerda->conteudo < valor)
-        {
-            inserirDireita(no->esquerda, valor);
+
+    else{
+        if(valor < raiz->dado){
+            raiz->esq = inserir(raiz->esq, valor);
         }
-        else
-        {
-            inserirEsquerda(no->esquerda, valor);
+        if(valor > raiz->dado){
+            raiz->dir = inserir(raiz->dir, valor);
         }
+
+        return raiz;
     }
 }
-void inserirDireita(No *no, int valor)
-{
-    if (no->direita == NULL)
-    {
-        No *novo = (No *)malloc(sizeof(No));
-        novo->conteudo = valor;
-        novo->direita = NULL;
-        novo->esquerda = NULL;
-
-        no->direita = novo;
-    }
-    else
-    {
-        if (no->direita->conteudo > valor)
-        {
-            inserirEsquerda(no->direita, valor);
-        }
-        else
-        {
-            inserirDireita(no->direita, valor);
-        }
+void imprimirArvore(celula *raiz){
+    if(raiz != NULL){
+        imprimirArvore(raiz->esq);
+        printf("%d ", raiz->dado);
+        imprimirArvore(raiz->dir);
     }
 }
-
-void inserir(arvore_binaria *arv, int valor)
-{
-
-    if (arv->raiz == NULL)
-    {
-        No *novo = (No *)malloc(sizeof(No));
-        novo->conteudo = valor;
-        novo->esquerda = NULL;
-        novo->direita = NULL;
-        arv->raiz = novo;
-    }
-    else
-    {
-        if (arv->raiz->conteudo > valor)
-        {
-            inserirEsquerda(arv->raiz, valor);
-        }
-        else{
-            inserirDireita(arv->raiz, valor);
-        }
+void limparArvore(celula *raiz){
+    if(raiz != NULL){
+        limparArvore(raiz->esq);
+        limparArvore(raiz->dir);
+        free(raiz);
     }
 }
-void imprimirArvore(No *raiz)
-{
-    if (raiz != NULL)
-    {
-        imprimirArvore(raiz->esquerda); // (*raiz).esquerda ----> mesma coisa
+int main(){
 
-        printf("%d ", raiz->conteudo);
-        
-        imprimirArvore(raiz->direita);
-    }
-}
-
-int main()
-{
-
-    int opcao, valor;
-    arvore_binaria arv;
+    arvoreBinaria arv;
     arv.raiz = NULL;
 
-    do
-    {
+    int opcao, valor;
 
-        printf("\nO - sair\n1 - inserir\n2 - imprimir\n");
+    do{
+      
+        printf("\n0 Para encerrar \n1 Para adicionar numero \n2 Para ver lista de numeros\n");
         scanf("%d", &opcao);
 
-        switch (opcao)
-        {
-
+        switch (opcao){
         case 0:
-            printf("\n Saindo...\n");
+            printf("encerrando...");
+            limparArvore(arv.raiz);
             break;
         case 1:
-            printf("Digite um valor ");
+            printf("\nDigite um numero: ");
             scanf("%d", &valor);
-            inserir(&arv, valor);
+            arv.raiz = inserir(arv.raiz, valor);
+
+            printf("\nNumero registrado com sucesso");
             break;
         case 2:
-            printf("\nImpressao da Arvore Binaria:\n");
             imprimirArvore(arv.raiz);
             break;
-
         default:
-            printf("\nOpcao invalida...\n");
+        printf("\nOpcao nao aceita, tente novamente:  ");
+            break;
         }
+        
 
     } while (opcao != 0);
+    
+    return 0;
 }
